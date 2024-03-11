@@ -93,13 +93,13 @@ const _isAnAlphaNumericStringOrEmpty = str =>
 const _isALetter = chr => new RegExp(/^[a-zA-Z]$/g).test(chr)
 
 const _isAValidPassportNumber = number =>
-  new RegExp(/^[a-zA-Z0-9]{9}$/g).test(number)
+  new RegExp(/^[a-zA-Z0-9]/g).test(number)
 
 const _isAValidPrecisionOfType = (chr, mzrType) =>
   chr === undefined ||
   (_isALetter(chr) && (mzrType === 'td3' || chr.toUpperCase() !== 'V'))
 
-const _isMrzTypeValid = type => ['td1', 'td3'].indexOf(type) !== -1
+const _isMrzTypeValid = type => ['td1', 'td3', 'mrvb'].indexOf(type) !== -1
 
 const _isDateFormatValid = stringDate => !isNaN(Date.parse(stringDate))
 

@@ -1,0 +1,17 @@
+{
+  "passport": {
+    "mrzType": "mrvb",
+    "type": "v",
+    "issuingCountry": "VEN",
+    "number": "2912960",
+    "expirationDate": "01 Mar 2029 00:00:00 GMT",
+    "optionalField1":"281122"
+  },
+  "user": {
+    "surname": "FUENTES MORA",
+    "givenNames": "GLADYS",
+    "nationality": "COL",
+    "dateOfBirth": "16 Oct 1970 00:12:00 GMT",
+    "sex": "female"
+  }
+}

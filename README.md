@@ -1,6 +1,8 @@
 ## MRZ Generator
 
-The module allows to create a MRZ (Machine Readable Zone) of type TD1 and TD3.</br>
+The module allows to create a MRZ (Machine Readable Zone) of type TD1 TD3.</br>
+
+The module allows to create a MRV (Machine Readable Zone) of type MRV B.</br>
 For more information, check the following page: </br>
 https://en.wikipedia.org/wiki/Machine-readable_passport
 
@@ -44,6 +46,30 @@ Associated input data :
     "nationality": "FRA",
     "dateOfBirth": "17 Oct 1986 00:12:00 GMT",
     "sex": "male"
+  }
+}
+
+```
+
+The MRZVof type MRV B should be displayed in your console. </br>
+Associated input data :
+
+```
+{
+  "passport": {
+    "mrzType": "mrvb",
+    "type": "v",
+    "issuingCountry": "VEN",
+    "number": "2912960",
+    "expirationDate": "01 Mar 2029 00:00:00 GMT",
+    "optionalField1":"281122"
+  },
+  "user": {
+    "surname": "FUENTES MORA",
+    "givenNames": "GLADYS",
+    "nationality": "COL",
+    "dateOfBirth": "16 Oct 1970 00:12:00 GMT",
+    "sex": "female"
   }
 }
 
@@ -93,22 +119,22 @@ const basicTest => {
 
 Format of input data: </br>
 
-| 1 level key | 2 level key    | Required | Format           | Description                               | Example           |
-| ----------- | -------------- | -------- | ---------------- | ----------------------------------------- | ----------------- |
-| passport    | mrzType        | Yes      | 'td1' or 'td3'   | Type of mrz.                              | 'td1'             |
-|             | type           | Yes      | AlphaNum(1)      | Type of passport.                         | 'i'               |
-|             | typePrecision  | No       | AlphaNum(1)      | Precise the type of passport.             | 'd'               |
-|             | issuingCountry | Yes      | Country ISO \*   | Document issuing country.                 | 'ALB'             |
-|             | number         | Yes      | AlphaNum(9)      | Document number.                          | 'AD98FR334'       |
-|             | expirationDate | Yes      | Stringified Date | Format is free. Document expiration date. | '2023-06-24'      |
-|             | optionalField1 | No       | AlphaNum(-)      | Optional field.                           | '54 option32'     |
-|             | optionalField2 | No       | AlphaNum(-)      | Optional field (only available for TD1).  | 'other 98'        |
-| user        | surname        | Yes      | Alpha(-)\*\*     | User surname.                             | 'Willson Mark'    |
-|             | givenNames     | Yes      | Alpha(-)\*\*     | User given names.                         | 'John Max Steven' |
-|             | nationality    | Yes      | Country ISO \*   | User nationality.                         | 'BEL'             |
-|             | dateOfBirth    | Yes      | Stringified Date | User date of birth.                       | '1988-03-15'      |
-|             | sex            | Yes      | 'male'or'female' | User sex.                                 | 'female'          |
-|             |                |          | or'unspecified'  |
+| 1 level key | 2 level key    | Required | Format                | Description                               | Example           |
+| ----------- | -------------- | -------- |-----------------------| ----------------------------------------- | ----------------- |
+| passport    | mrzType        | Yes      | 'td1' , 'td3' or mrvb | Type of mrz.                              | 'td1'             |
+|             | type           | Yes      | AlphaNum(1)           | Type of passport.                         | 'i'               |
+|             | typePrecision  | No       | AlphaNum(1)           | Precise the type of passport.             | 'd'               |
+|             | issuingCountry | Yes      | Country ISO \*        | Document issuing country.                 | 'ALB'             |
+|             | number         | Yes      | AlphaNum(9)           | Document number.                          | 'AD98FR334'       |
+|             | expirationDate | Yes      | Stringified Date      | Format is free. Document expiration date. | '2023-06-24'      |
+|             | optionalField1 | No       | AlphaNum(-)           | Optional field.                           | '54 option32'     |
+|             | optionalField2 | No       | AlphaNum(-)           | Optional field (only available for TD1).  | 'other 98'        |
+| user        | surname        | Yes      | Alpha(-)\*\*          | User surname.                             | 'Willson Mark'    |
+|             | givenNames     | Yes      | Alpha(-)\*\*          | User given names.                         | 'John Max Steven' |
+|             | nationality    | Yes      | Country ISO \*        | User nationality.                         | 'BEL'             |
+|             | dateOfBirth    | Yes      | Stringified Date      | User date of birth.                       | '1988-03-15'      |
+|             | sex            | Yes      | 'male'or'female'      | User sex.                                 | 'female'          |
+|             |                |          | or'unspecified'       |
 
 \* : See the list below to get correct country code.
 \*\* : Are allowed hyphens, spaces and apostrophes.
