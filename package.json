@@ -1,6 +1,6 @@
 {
   "name": "mrz-generator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Enable a type TD1 and TD3 MRZ (Machine Readable Zone) text generation and MRV type B",
   "main": "index.js",
   "scripts": {

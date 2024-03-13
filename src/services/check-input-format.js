@@ -104,7 +104,7 @@ const _isMrzTypeValid = type => ['td1', 'td3', 'mrvb'].indexOf(type) !== -1
 const _isDateFormatValid = stringDate => !isNaN(Date.parse(stringDate))
 
 const _isNameFormatValid = name =>
-  new RegExp(/^([a-zA-Z]+[ |-|-|']?)+$/g).test(name)
+    name.length > 0 ? new RegExp(/^([a-zA-Z]+[ |-|-|']?)+$/g).test(name) : true
 
 const _isCountryCodeValid = code => countryCodes.indexOf(code) !== -1
 
